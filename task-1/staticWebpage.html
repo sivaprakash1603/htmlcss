@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Static Webpage</title>
+        <style>
+            header,nav,main,footer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            header{
+                background-color: black;
+                color: white;
+                padding: 20px;
+                width: 100%;
+            }
+            nav{
+                background-color: lightgray;
+                padding: 20px;
+                width: 200px;
+            }
+            main{
+                background-color: white;
+                padding: 20px;
+                flex:1;
+            }
+            footer{
+                background-color: black;
+                color: white;
+                padding: 20px;
+                width: 100%;
+            }
+            .flex-container{
+                display: flex;
+                height: 100vh;
+                flex-wrap:wrap;
+            }
+            @media screen and (max-width: 600px){   
+                .container{
+                    flex-direction: column;
+                }
+                nav{
+                    width: 100%;
+                }
+            }
+        </style>        
+    </head>
+    <body>
+        <header>Header</header>
+        <div class="flex-container">
+        <nav>Navigation</nav>
+        <main>Main Content</main>
+        </div>
+        <footer>Footer</footer>
+    </body>
+</html>
