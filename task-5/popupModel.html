@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Mdel</title>
+    <style>
+        .pop {
+            display:none;
+            width:300px;
+            aspect-ratio: 1;
+            background-color:rgb(255, 255, 255);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .pop:target {
+            display:block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(149, 220, 255);
+            color: rgb(0, 0, 0);
+            padding: 10px;
+        }
+        .cls-btn {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            font-weight: bold;
+        }
+        p {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#popup">open popup</a>
+    <div id="popup" class="pop">
+        <div class="popup-content">
+            <div class="header">
+            <h1>Model Popup</h1>
+            <a href="#" class="cls-btn">X</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam ullam, aperiam esse aut eligendi pariatur libero natus, enim fuga voluptas, dolor error accusamus omnis totam magni asperiores. Vel, veniam?</p>
+
+        </div>
+    </div>
+</body>
+</html>
