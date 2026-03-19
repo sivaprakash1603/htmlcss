@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousal Slider</title>
+    <style>
+        .carousal{
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slides{
+            width: 500%;
+            height: 100%;
+            display: flex;
+            transition: all 0.5s ease-in-out;
+            animation: slide 15s infinite;
+        }
+        .slide{
+            width: 20%;
+            transition: all 0.5s ease-in-out;
+        }
+        .slide img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .navigation-auto{
+            position: absolute;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            bottom: 10px;
+        }
+        .navigation-auto label{
+            border: 2px solid #fff;
+            padding: 5px;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s ease-out;
+        }
+        .navigation-auto label:hover{
+            background-color: #fff;
+        }
+        #radio1:checked ~ .slides{
+            transform: translateX(0);
+            animation: none;
+        }
+        #radio2:checked ~ .slides{
+            transform: translateX(-20%);
+            animation: none;
+        }
+        #radio3:checked ~ .slides{
+            transform: translateX(-40%);
+            animation: none;
+        }
+        #radio4:checked ~ .slides{
+            transform: translateX(-60%);
+            animation: none;
+        }
+        #radio1:checked ~ .navigation-auto .auto-btn1,
+        #radio2:checked ~ .navigation-auto .auto-btn2,  
+        #radio3:checked ~ .navigation-auto .auto-btn3,
+        #radio4:checked ~ .navigation-auto .auto-btn4{
+            background-color: #fff;
+        }
+        .carousal input[type="radio"]{
+            display: none;
+        }
+            @keyframes slide{
+                0%{
+                    transform: translateX(0);
+                }
+                20%{
+                    transform: translateX(0);
+                }
+                25%{
+                    transform: translateX(-20%);
+                }
+                45%{
+                    transform: translateX(-20%);
+                }
+                50%{
+                    transform: translateX(-40%);
+                }
+                70%{
+                    transform: translateX(-40%);
+                }
+                75%{
+                    transform: translateX(-60%);
+                }
+                95%{
+                    transform: translateX(-60%);
+                }
+                100%{
+                    transform: translateX(0);
+                }
+            }
+        
+        </style>
+</head>
+<body>
+    <div class="carousal">
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+        <div class="slides">
+        <div class="slide">
+            <img src="img-1.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="img-2.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="img-3.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="img-4.jpg" alt="">
+        </div>
+        </div>
+        <div class="navigation-auto">
+            <label for="radio1" class="auto-btn1"></label>
+            <label for="radio2" class="auto-btn2"></label>
+            <label for="radio3" class="auto-btn3"></label>
+            <label for="radio4" class="auto-btn4"></label>
+        </div>    
+    </div>
+    
+</body>
+</html>
