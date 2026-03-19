@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+    <style>
+        body{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content{
+            max-height: 0;
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            padding: 0 10px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.4s ease-out;
+        }
+        input[type="checkbox"]{
+            display: none;
+        }
+        .section{
+            width: 100%;
+            max-width: 600px;
+            margin:10px;
+            border: #000000 solid 2px;
+            border-radius: 10px;
+            transition: all 0.3s ease-out;
+            overflow: hidden;
+        }
+        label{
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 10px;
+            color: #000000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        input:checked + label + .content{
+            max-height: 300px;
+            opacity: 1;
+            transform:translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Accordion</h1>
+    <div class="section">
+    <input type="checkbox" name="accordion" id="section1">
+    <label for="section1">Section 1</label>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam ullam, aperiam esse aut eligendi pariatur libero natus, enim fuga voluptas, dolor error accusamus omnis totam magni asperiores. Vel, veniam?</p>
+    </div>
+    </div>
+    <div class="section">
+    <input type="checkbox" name="accordion" id="section2">
+    <label for="section2">Section 2</label>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam ullam, aperiam esse aut eligendi pariatur libero natus, enim fuga voluptas, dolor error accusamus omnis totam magni asperiores. Vel, veniam?</p>
+    </div>
+    </div>
+    <div class="section">
+    <input type="checkbox" name="accordion" id="section3">
+    <label for="section3">Section 3</label>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quam ullam, aperiam esse aut eligendi pariatur libero natus, enim fuga voluptas, dolor error accusamus omnis totam magni asperiores. Vel, veniam?</p>
+    </div>
+    </div>   
+
+    
+</body>
+</html>
