@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Content Interface</title>
+    <style>
+        .tabs{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #64ffb2;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .tab-wrapper input[type="radio"]{
+            display: none;
+        }
+        .tabs label{
+            padding: 10px 20px;
+            margin: 10px 0px;
+            background-color: #4abc83;
+            border: 1px solid #ccc;
+            color: #ffff;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .tab-wrapper #tab1:checked ~ .tabs label[for="tab1"],
+        .tab-wrapper #tab2:checked ~ .tabs label[for="tab2"],
+        .tab-wrapper #tab3:checked ~ .tabs label[for="tab3"]{
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        .tab-content > div{
+            height: 0;
+            overflow: hidden;
+            text-align: center;
+            font-size: 18px;
+            width: 100%;
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+        #tab1:checked ~ .tab-content #content1,
+        #tab2:checked ~ .tab-content #content2,
+        #tab3:checked ~ .tab-content #content3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #b3ffd9;
+            border-radius: 10px;
+            font-size: 36px;
+            color: #000000;
+            font-weight: bolder;
+            height: 100vh;
+            opacity: 1;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="tab-wrapper">
+        <input type="radio" name="tab" id="tab1" checked>
+        <input type="radio" name="tab" id="tab2">
+        <input type="radio" name="tab" id="tab3">
+    <div class="tabs">
+    <label for="tab1">Tab 1</label>
+    <label for="tab2">Tab 2</label>
+    <label for="tab3">Tab 3</label>
+    </div>
+    <div class="tab-content">
+        <div id="content1">Content for Tab 1</div>
+        <div id="content2">Content for Tab 2</div>
+        <div id="content3">Content for Tab 3</div>
+    </div>
+    </div>
+</body>
+</html>
