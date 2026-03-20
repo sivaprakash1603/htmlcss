@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gridFlexLayout</title>
+    <style>
+        body{
+            display: grid;
+            grid-template-areas: "header header header header"
+                                 "sidebar main main main"
+                                 "footer footer footer footer";
+            grid-template-columns: 2fr 2fr 3fr 3fr;
+            grid-template-rows: auto auto auto auto;
+        }
+        header{
+            grid-area: header;
+            position: sticky;
+            top: 0;
+            height: 40px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+        }
+        aside{
+            position: sticky;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 40px;
+            grid-area: sidebar;
+            background-color: #d0d0d0;
+            padding: 20px;
+            z-index: 999;
+        }
+        main{
+            grid-area: main;
+            height: 200vh;
+            background-color: #e0e0e0;
+            padding: 20px;
+        }
+        footer{
+            grid-area: footer;
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .container > div{
+            background-color: #c0c0c0;
+            padding: 20px;
+            aspect-ratio: 1/1;
+            flex:1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+            min-width:200px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <aside>Sidebar</aside>
+    <main>
+        <div class="container">
+            <div class="item1">Item 1</div>
+            <div class="item2">Item 2</div>
+            <div class="item3">Item 3</div>
+            <div class="item4">Item 4</div>
+            <div class="item5">Item 5</div>
+            <div class="item6">Item 6</div>
+        </div>
+    </main>
+    <footer>Footer</footer>
+</body>
+</html>
